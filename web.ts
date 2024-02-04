@@ -9,9 +9,9 @@ import {Response} from 'express';
 
 /**
  * Webclient Setup
- * @param {Application} router
- * @returns {Application}
+ * @param {Response} res
  */
+
 export class electron {
 
     public mainPage(res: Response) {
