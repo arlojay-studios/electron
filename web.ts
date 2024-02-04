@@ -15,11 +15,11 @@ import {Response} from 'express';
 export class electron {
 
     public mainPage(res: Response) {
-        return res.sendFile('./bootstrap.html')
+        res.sendFile('./bootstrap.html')
     }
     
     public script(res: Response) {
-        return res.sendFile('./web.ts');
+        res.sendFile('./web.ts');
     }
 
 }
