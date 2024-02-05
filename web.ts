@@ -5,7 +5,7 @@
  * @private
  */
 
-import {Response} from 'express';
+import type { Response } from 'express';
 
 /**
  * Webclient Setup
