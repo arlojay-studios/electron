@@ -5,21 +5,27 @@
  * @private
  */
 
-import type { Response } from 'express';
+import type { Application, Response } from 'express';
 
 /**
  * Webclient Setup
- * @param {Response} res
+ * @param { Response } res
  */
 
 export class electron {
 
-    public mainPage(res: Response) {
-        res.sendFile('./bootstrap.html')
-    }
-    
-    public script(res: Response) {
-        res.sendFile('./web.ts');
+    public page(server: Application) {
+        server.get('/', (req, res: Response) => {
+            res.sendFile(__dirname + '/bootstrap.html')
+        })
+
+        server.get('/js', (req, res: Response) => {
+            res.sendFile(__dirname + '/page.js')
+        })
+
+        server.get('/scss', (req, res: Response) => {
+            res.sendFile(__dirname + '/stylesheet.scss')
+        })
     }
 
 }
